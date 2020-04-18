@@ -1,0 +1,33 @@
+$colors: (
+    primary: #ffffff,
+    secondary: #1074a5,
+    brand: #005680,
+);
+$fontFamilies: (
+    primary: "Lato, Arial, sans-serif",
+);
+$fontSizes: (
+    primary: 14px,
+    secondary: 16px,
+    header: 20px,
+    sub-header: 18px,
+    icon: 24px,
+    sub-icon: 22px,
+);
+$colors: (
+    primary: #ffffff,
+    secondary: #0d3842,
+    brand: #005680,
+);
+
+@function color($name) {
+    @return map-get($colors, $name);
+}
+
+@function fontSize($name) {
+    @return map-get($fontSizes, $name);
+}
+
+@function fontFamily($name) {
+    @return map-get($fontFamilies, $name);
+}

@@ -1,0 +1,30 @@
+@import "main.scss";
+.App {
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  font-family: fontFamily(primary);
+  .App-header {
+    background-color: color(primary);
+    color: color(secondary);
+    h3 {
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
