@@ -1,13 +1,13 @@
 import React from 'react';
+import { Route } from 'react-router';
+import Layout from './Layout';
+import Home from './components/home/Home'
 import './App.scss';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3>My Profile</h3>
-      </header>
-    </div>
+    <Layout>
+      <Route exact path='/' component={Home} />
+    </Layout>
   );
 }
 
