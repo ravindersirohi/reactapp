@@ -1,9 +1,11 @@
 import React from 'react';
-import { Button } from 'reactstrap';
-
+import { Label } from 'reactstrap';
+import './home.scss';
 function Home() {
   return (
-    <Button color="primary">Home</Button>
+    <section className="home">
+      <Label>Home</Label>
+    </section>
   );
 }
 

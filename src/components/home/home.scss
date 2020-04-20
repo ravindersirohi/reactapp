@@ -1,0 +1,12 @@
+@import "./../../main.scss";
+.home {
+    font-family: fontFamily(primary);
+    color: color(primary);
+    font-size: fontSize(primary);
+    text-transform: uppercase;
+    font-weight: 300;
+    Label{
+        font-size: fontSize(sub-header);
+        font-weight: 100;
+    }
+}
