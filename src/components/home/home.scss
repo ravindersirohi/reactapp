@@ -3,10 +3,31 @@
     font-family: fontFamily(primary);
     color: color(primary);
     font-size: fontSize(primary);
-    text-transform: uppercase;
-    font-weight: 300;
-    Label{
-        font-size: fontSize(sub-header);
+    font-weight: 200;
+    padding: 8px;
+    button{
+        text-transform: uppercase;
+        margin: 4px 8px;
+        min-width: 100px;
+        background-color: color(secondary) !important;
+        color: color(primary) !important;
+    }
+    .card {
         font-weight: 100;
+        min-height: 600px;
+        min-width: 200px;
+        font-size: fontSize(sub-header);
+        background-color: color(primary) !important;
+        color: color(secondary) !important;
+        .card-title {
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            background-color: color(secondary) !important;
+            color: color(primary) !important;
+            padding: 8px;
+        }
+        .card-footer{
+
+        }
     }
 }

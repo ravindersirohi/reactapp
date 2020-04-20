@@ -1,11 +1,20 @@
 import React from 'react';
-import { Label } from 'reactstrap';
+import { Card, CardText, CardBody, CardTitle, CardFooter, CardSubtitle, Button } from 'reactstrap';
 import './home.scss';
 function Home() {
   return (
-    <section className="home">
-      <Label>Home</Label>
-    </section>
+    <div className="home">
+      <Card>
+        <CardBody>
+          <CardTitle>Profile</CardTitle>
+          <CardText>Your information</CardText>
+        </CardBody>
+        <CardFooter>
+          <Button>Cancel</Button>
+          <Button>Save</Button>
+        </CardFooter>
+      </Card>
+    </div>
   );
 }
 
