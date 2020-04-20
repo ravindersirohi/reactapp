@@ -1,0 +1,27 @@
+@import "./../../main.scss";
+.menu {
+    font-family: fontFamily(primary);
+    color: color(primary);
+    font-size: fontSize(secondary);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 2px;
+    background-color: color(brand) !important;
+    color: color(primary) !important;
+    .navbar {
+        .navbar-brand {
+            font-size: fontSize(header);
+            color: color(primary) !important;
+            font-weight: 300;
+        }
+        .navbar-toggler {
+            border-color: color(primary) !important;
+        }
+        li {
+            a {
+                color: color(primary) !important;
+                font-size: fontSize(secondary);
+            }
+        }
+    }
+}
