@@ -1,13 +1,14 @@
 import React from 'react';
-import { Card, CardText, CardBody, CardTitle, CardFooter, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardFooter, Button } from 'reactstrap';
 import './home.scss';
+import Profile from '../profile/Profile';
 function Home() {
   return (
     <div className="home">
       <Card>
         <CardBody>
           <CardTitle>Profile</CardTitle>
-          <CardText>Your information</CardText>
+          <Profile />
         </CardBody>
         <CardFooter>
           <Button>Cancel</Button>
