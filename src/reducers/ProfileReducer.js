@@ -1,4 +1,4 @@
-import { GET_PROFILES, ADD_PROFILE } from '../actions/ActionTypes'
+import * as Actions from '../actions/ActionTypes'
 
 const initialState = [
     {
@@ -14,11 +14,11 @@ const initialState = [
 
 const reducer = (state = [], action) => {
     switch (action.type) {
-        case GET_PROFILES:
+        case Actions.GET_PROFILES:
             return [
                 ...state
             ]
-        case ADD_PROFILE:
+        case Actions.ADD_PROFILE:
             return [
                 ...state,
                 action.payload

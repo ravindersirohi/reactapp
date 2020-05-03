@@ -2,8 +2,9 @@ import React, { useRef } from 'react';
 import { Card, CardBody, CardTitle, CardFooter, Button } from 'reactstrap';
 import './home.scss';
 import Profile from '../profile/Profile';
+import ListProfiles from '../profile/ListProfiles';
 
-function Home() {
+const Home = () => {
   const profileRef = useRef();
   const saveEvent = event => {
     const info = profileRef.current();
@@ -15,17 +16,22 @@ function Home() {
   }
   return (
     <div className="home">
-      <Card>
-        <CardBody>
-          <CardTitle>Profile</CardTitle>
-          <Profile ref={profileRef} />
-        </CardBody>
-        <CardFooter>
-          <Button type="button" onClick={resetEvent}>Reset</Button>
-          <Button type="submit" onClick={saveEvent}>Save</Button>
-        </CardFooter>
-      </Card>
+      <h2>PROFILES</h2>
+      <ListProfiles />
     </div>
+
+    // <div className="home">
+    //   <Card>
+    //     <CardBody>
+    //       <CardTitle>Profile</CardTitle>
+    //       <Profile ref={profileRef} />
+    //     </CardBody>
+    //     <CardFooter>
+    //       <Button type="button" onClick={resetEvent}>Reset</Button>
+    //       <Button type="submit" onClick={saveEvent}>Save</Button>
+    //     </CardFooter>
+    //   </Card>
+    //</div>
   );
 }
 
