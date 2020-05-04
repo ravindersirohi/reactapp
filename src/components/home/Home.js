@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Card, CardBody, CardTitle, CardFooter, Button } from 'reactstrap';
+//import { Card, CardBody, CardTitle, CardFooter, Button } from 'reactstrap';
 import './home.scss';
 import Profile from '../profile/Profile';
 import ListProfiles from '../profile/ListProfiles';

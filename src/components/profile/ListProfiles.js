@@ -1,26 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
+import { connect } from 'react-redux';
+import * as profileActions from '../../actions/ProfileActions';
 import axios from 'axios';
 import './profile.scss';
 
 
-const ListProfiles = () => {
-
-    const [profiles, setData] = useState([]);
-    useEffect(() => {
-        axios.get('http://localhost:3001/api/profile/')
-            .then((result) => setData(result.data))
-            .catch(error => console.log(error))
-    }, []);
-    const items = profiles.map(({ id, fullname, email }) => <ListGroupItem color="dark" key={id} >{fullname} ({email})</ListGroupItem>);
+const ListProfiles = ({profiles}) => {
+    console.log(profiles);
+    const items = profiles.map(({ id, name, email }) => <ListGroupItem color="dark" key={id} >{name} ({email})</ListGroupItem>);
     return (
-        <div className="profile">
+        <>
             <Button color="success">Add</Button>
             <ListGroup>
                 {items}
             </ListGroup>
-        </div>
+        </>
     );
 }
 
-export default ListProfiles;
+const mapStateToProps = state => {
+    return {
+        profiles: state.UserData
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addProfile: () => dispatch(profileActions.addProfile({})),
+        getProfiles: () => dispatch(profileActions.getProfiles)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ListProfiles);
