@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 import { connect } from 'react-redux';
-import * as profileActions from '../../actions/ProfileActions';
-import axios from 'axios';
+import * as actions from '../../actions/ProfileActions';
 import './profile.scss';
 
 
-const ListProfiles = ({profiles}) => {
-    console.log(profiles);
-    const items = profiles.map(({ id, name, email }) => <ListGroupItem color="dark" key={id} >{name} ({email})</ListGroupItem>);
+const ListProfiles = ({ userProfiles, fetchUserProfiles }) => {
+    useEffect(() => {
+        fetchUserProfiles()
+    }, [fetchUserProfiles])
+
+    const items = userProfiles ?
+        userProfiles.map(({ id, name, email }) => <ListGroupItem color="dark" key={id} >{id})  {name}  ({email})</ListGroupItem>)
+        : <ListGroupItem color="dark">No user profile found!</ListGroupItem>;
     return (
         <>
             <Button color="success">Add</Button>
@@ -21,17 +25,15 @@ const ListProfiles = ({profiles}) => {
 
 const mapStateToProps = state => {
     return {
-        profiles: state.UserData
+        userProfiles: state.UserData
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addProfile: () => dispatch(profileActions.addProfile({})),
-        getProfiles: () => dispatch(profileActions.getProfiles)
+        fetchUserProfiles: () => dispatch(actions.fetchUserProfiles())
     }
 }
-
 export default connect(
     mapStateToProps,
     mapDispatchToProps

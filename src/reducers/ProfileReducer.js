@@ -18,10 +18,18 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 Loading: true
             }
+        case Actions.LOAD_ERROR:
+            return {
+                ...state,
+                Loading: false,
+                Error: action.payload
+            }
         case Actions.GET_PROFILES:
-            return [
-                ...state
-            ]
+            return {
+                ...state,
+                UserData: action.payload,
+                Loading: false
+            }
         case Actions.ADD_PROFILE:
             return [
                 ...state,
